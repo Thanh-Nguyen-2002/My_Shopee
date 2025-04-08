@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.search input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 16px 200px 16px 12px;
+    position: relative;
+}
+
+.search {
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+.search_btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0px, -50%);
+    background: #ff4d00;
+    border-radius: 5px;
+}

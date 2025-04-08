@@ -1,0 +1,101 @@
+.container {
+    width: 100%;
+    height: auto;
+    /* text-align: center;
+    align-content: center; */
+    background: #ffffff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.title_form h2 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.btnLogin {
+    width: 100%;
+    border-radius: 0%;
+    padding: 18px;
+}
+
+.or {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    color: #c0c0c0;
+}
+
+.or_left, .or_right {
+    height: 1px;
+    background: #c0c0c0;
+}
+
+.form_input {
+    padding: 20px 0px;
+}
+
+.input_phone, .input_password {
+    padding: 8px;
+    border-radius: 0%;
+}
+
+.btn_login_other {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.btn_login_fabook, .btn_login_google {
+    border: 1px solid #c0c0c0;
+    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0%;
+}
+
+.btn_login_fabook:hover, 
+.btn_login_google:hover {
+    background: #e7e6e6;
+    border: 1px solid #c0c0c0;
+}
+
+.footer_form {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.link_register {
+    color: rgb(238, 77, 45);
+    padding-left: 5px;
+}
+
+.footer_form span {
+    color: #c0c0c0;
+}
+
+.clause span{
+    font-size: 12px;
+}
+
+.clause {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.clause_space {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.clause_space {
+    color: #cf0202;
+}

@@ -1,0 +1,127 @@
+.container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.nav_btn {
+    display: flex;
+    gap: 10px;
+}
+
+.nav_links {
+    display: flex;
+    gap: 16px;
+}
+
+.nav_spacer {
+    flex: 1;
+}
+
+.nav_btn_text {
+    color: white;
+}
+
+.nav_btn_text:hover {
+    color: antiquewhite;
+}
+
+.nav_link__text {
+    color: white;
+}
+
+.nav_link__text:hover {
+    color: antiquewhite;
+}
+
+.vertical {
+    height: 20px;
+    width: 1px;
+    background: antiquewhite;
+}
+
+.language {
+    display: flex;
+    flex: 1;
+    gap: 5px;
+    cursor: pointer;
+    width: 100px;
+}
+
+.icon {
+    gap: 5px;
+    display: flex;
+}
+
+.notification {
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+}
+
+.popover_Language {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.language_item {
+    flex: 1;
+    cursor: pointer;
+}
+
+.language_item:hover {
+    color: rgb(241, 61, 37);
+}
+
+.popover_Notification {
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin : 0;
+    padding: 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.popover_Notification span {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.popover_Notification_btn {
+    position: absolute;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+}
+
+.popover_Notification_btn__register , .popover_Notification_btn__login {
+    width: 100%;
+    padding: 10px;
+    background: #eeeeee;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+.popover_Notification_btn__register:hover , .popover_Notification_btn__login:hover {
+    width: 100%;
+    padding: 10px;
+    background: #b3afaf;
+    box-sizing: border-box;
+}
+
+.dropdown {
+    cursor: pointer;
+}

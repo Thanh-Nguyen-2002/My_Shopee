@@ -1,0 +1,40 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav_link {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    align-items: center;
+}
+
+.link_toHome {
+    display: flex;
+    gap: 8px;
+    color: #eb5537;
+    align-items: center;
+    margin: 0;
+}
+
+.link_toHome:hover {
+    display: flex;
+    gap: 8px;
+    color: #eb5537;
+}
+
+.link_toSupport span {
+    color: #e40d0d;
+}
+
+.nav_link h2 {
+    margin: 0;
+}
+
+.link_toHome img {
+    margin: 0;
+}

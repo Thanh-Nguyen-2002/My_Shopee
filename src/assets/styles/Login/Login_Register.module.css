@@ -1,0 +1,52 @@
+.main {
+    background: rgb(238, 77, 45);
+    height: 600px;
+    margin-top: 84px;
+}
+
+.container {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    height: 84px;
+    z-index: 1000;
+    background : white;
+    width: 100%;
+    align-content: center;
+}
+
+.footer {
+    height: calc(100vh - 600px - 84px);
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+}
+
+.form {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+}
+
+.right_form {
+    width: 400px;
+    height: 100%;
+    align-content: center;
+}
+
+.left_form {
+    flex: 1;
+    height: 600px;
+    display: flex;
+}

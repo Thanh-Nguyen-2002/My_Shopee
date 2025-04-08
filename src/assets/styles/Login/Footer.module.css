@@ -1,0 +1,14 @@
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.service, .info, .pay, .follow, .download {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

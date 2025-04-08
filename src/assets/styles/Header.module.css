@@ -1,0 +1,26 @@
+.container {
+    /* width: 100vw; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background: var(--nc-primary-gradient);
+    color: white;
+    z-index: 1000;
+}
+
+.nav_link {
+    margin: 0 auto;
+    width: 1200px;
+    height: 50px;
+    align-content: center;
+}
+
+.header_with_search {
+    width: 100%;
+    height: calc(150px - 50px);
+}
+
+:root {
+    --nc-primary-gradient : linear-gradient(#ee4d2d,#ff7337)
+}
