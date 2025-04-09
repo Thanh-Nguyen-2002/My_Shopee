@@ -2,6 +2,7 @@ import React from "react";
 import styles from '../../assets/styles/Home.module.css'
 import Header from '../../components/layout/Header'
 import Slice from "../../components/layout/Slice";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
     return(
@@ -10,7 +11,8 @@ const Home = () => {
                 <Header />
             </div>
             <div className={styles.main_container}>
-                <Slice />
+                {/* <Slice /> */}
+                <Outlet />
             </div>
         </div>
     )

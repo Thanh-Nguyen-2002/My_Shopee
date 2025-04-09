@@ -1,20 +1,49 @@
 import React, { useState } from "react";
 import styles from '../../assets/styles/Login/Form_Login.module.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Input, Form , Button } from "antd";
 import {
     EyeInvisibleOutlined,
     EyeOutlined
 } from "@ant-design/icons"
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const FormLoginSeller = () => {
     const [visible, setVisible] = useState(false);
+    const [isLoading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    const roles = "Seller";
 
-    const handleSubmit = (value) => {
+    const handleSubmit = async (value) => {
         const { username, password} = value;
-        console.log(username, password);
-        console.log(1);
-    }
+        setLoading(true);
+        try {
+            const response = await axios.post("http://localhost:5000/api/auth/login", {
+                username,
+                password,
+                role: roles
+            });
+
+            const result = response.data;
+            const token = result.token;
+            const user = result.user;
+            localStorage.setItem("token", token);
+            localStorage.setItem("user", JSON.stringify(user));
+            navigate("/");
+            toast.success(result?.message || "Đăng nhập thành công.")
+        } catch (err) {
+            if (err.response?.data?.message) {
+                toast.error(err.response.data.message);
+            } else if (err.request) {
+                toast.error("Không kết nối được với server.");
+            } else {
+                toast.error("Có lỗi xảy ra.Vui lòng thử lại sau.");
+            }
+        } finally {
+            setLoading(false);
+        }
+    }    
 
     return(
         <div className={styles.container}>
@@ -47,8 +76,8 @@ const FormLoginSeller = () => {
                             rules={[
                                 {required:true, message : "Vui lòng điền vào mục này"},
                                 {
-                                    pattern : /^.{8,15}$/,
-                                    message: "Mật khẩu phải từ 8 đến 15 ký tự"
+                                    pattern : /^.{6,15}$/,
+                                    message: "Mật khẩu phải từ 6 đến 15 ký tự"
                                 }
                             ]}
                             name="password"
@@ -73,6 +102,7 @@ const FormLoginSeller = () => {
                             type="primary"
                             htmlType="submit"
                             className={styles.btnLogin}
+                            loading={isLoading}
                             >
                                 <span>ĐĂNG NHẬP</span>
                             </Button>

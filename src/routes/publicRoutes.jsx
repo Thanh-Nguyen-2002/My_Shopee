@@ -1,8 +1,10 @@
+import { Children } from "react";
 import Login from "../pages/Auth/Login"
 import LoginSeller from "../pages/Auth/LoginSeller";
 import Register from "../pages/Auth/Register"
 import RegisterSeller from "../pages/Auth/RegisterSeller"
-import Home from "../pages/Layout/Home";
+import LayoutPage from "../pages/Layout/LayoutPage";
+import Home from "../pages/Home";
 
 const publicRoutes = [
     {
@@ -23,7 +25,13 @@ const publicRoutes = [
     },
     {
         path : "/",
-        element : <Home />
+        element : <LayoutPage />,
+        children : [
+            {
+                index : true,
+                element : <Home />
+            }
+        ]
     }
 ]
 export default publicRoutes;

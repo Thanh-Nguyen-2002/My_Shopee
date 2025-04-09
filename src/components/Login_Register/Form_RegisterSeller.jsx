@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from '../../assets/styles/Login/Form_Login.module.css'
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import { Input, Form , Button } from "antd";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const FormRegisterSeller = () => {
     const [isShow, setIsShow] = useState(true);
@@ -9,12 +11,40 @@ const FormRegisterSeller = () => {
     const [form] = Form.useForm();
     const [phoneValue, setPhoneValue] = useState("");
     const [isDisabled, setIsDisabled] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const roles = "Seller";
+    const navigate = useNavigate();
 
-    const handleSubmit = (value) => {
+    const handleSubmit = async (value) => {
         const { password } = value;
-        console.log(phoneValue , password);
-        console.log(1);
+        setIsLoading(true);
+        try {
+            const reponsive = await axios.post("http://localhost:5000/api/auth/register",
+                {
+                    username : phoneValue,
+                    email : `${phoneValue}@gmail.com`,
+                    password,
+                    role : roles
+                }
+            )
 
+            const result = reponsive.data;
+            navigate("/login-seller");
+            toast.success(result?.message || "Chúc mừng bạn đã đăng ký tài khoản thành công.");
+
+        } catch (err) {
+            if(err.response?.data?.message) {
+                setIsShow(true);
+                toast.error(err.response.data.message);
+                
+            } else if (err.request) {
+                toast.error("Không kết nối được với server!");
+            } else {
+                toast.error("Có lỗi xảy ra.Vui lòng thử lại sau.")
+            }
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return(
@@ -99,6 +129,7 @@ const FormRegisterSeller = () => {
                                 type="primary"
                                 htmlType="submit"
                                 className={styles.btnLogin}
+                                loading={isLoading}
                                 >
                                     <span>ĐĂNG KÝ</span>
                                 </Button>

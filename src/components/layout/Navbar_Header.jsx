@@ -48,6 +48,10 @@ const NavbarHeader = () => {
           label: "Đăng xuất",
           key: "logout",
         },
+        {
+            label: "Thông tin cá nhân",
+            key: "infomation",
+        },
     ];
 
     const handleMenuClick = (e) => {
@@ -55,6 +59,9 @@ const NavbarHeader = () => {
             localStorage.clear();
             navigate("/login");
             toast.success("Đăng xuất thành công.");
+        }
+        if(e.key === "infomation") {
+            toast.success("View thông tin.")
         }
     }
 

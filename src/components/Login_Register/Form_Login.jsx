@@ -31,7 +31,7 @@ const FormLogin = () => {
             localStorage.setItem("token", token);
             localStorage.setItem("user", JSON.stringify(user));
             navigate("/");
-            toast.success(result.message || "Đăng nhập thành công!");
+            toast.success(result?.message || "Đăng nhập thành công!");
     
         } catch (err) {
             if (err.response?.data?.message) {
